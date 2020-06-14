@@ -1,5 +1,97 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+
+  nav#mainNav.navbar.navbar-expand-lg.navbar-light.fixed-top.bg-secondary
+    .container
+      a.navbar-brand.js-scroll-trigger(href='#page-top') HM
+      button.navbar-toggler.navbar-toggler-right(type='button' data-toggle='collapse' data-target='#navbarResponsive' aria-controls='navbarResponsive' aria-expanded='false' aria-label='Toggle navigation')
+        | Menu
+        svg.svg-inline--fa.fa-bars.fa-w-14(aria-hidden='true' focusable='false' data-prefix='fas' data-icon='bars' role='img' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 448 512' data-fa-i2svg='')
+          path(fill='currentColor' d='M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z')
+        // <i class="fas fa-bars"></i>
+      #navbarResponsive.collapse.navbar-collapse
+         ul.navbar-nav.ml-auto
+          li.nav-item
+            a.nav-link.js-scroll-trigger(href='#about') home
+          li.nav-item
+            a.nav-link.js-scroll-trigger(href='#projects') about
+          li.nav-item
+            a.nav-link.js-scroll-trigger(href='#signup') contact
+            
+  header.masthead
+    .container.d-flex.h-100.align-items-center
+      .mx-auto.text-center
+        h1.mx-auto.my-0.text-uppercase Red bicycle
+        h2.text-white-50.mx-auto.mt-2.mb-5 The first web red bicycle
+        a.btn.btn-primary.js-scroll-trigger(href='#about') Ready..
+  // About
+  section#about.about-section.text-center
+    .container
+      .row
+        .col-lg-8.mx-auto
+          h2.text-white.mb-4 Designed for you to enjoy your passion
+
+          p.text-white-50
+            | You will find a new way of seeing it together with technology.
+            
+      img.img-fluid(src='images/img/ipad.png' alt='')
+  // Projects
+  section#projects.projects-section.bg-light
+     .container
+      #mainmap 
+  // Signup
+  section#signup.signup-section
+    .container
+      .row
+        .col-md-10.col-lg-8.mx-auto.text-center
+          i.far.fa-paper-plane.fa-2x.mb-2.text-white
+          h2.text-white.mb-5 Subscribe to be able to tell you what's new!
+          form.form-inline.d-flex
+            input#inputEmail.form-control.flex-fill.mr-0.mr-sm-2.mb-3.mb-sm-0(type='email' placeholder=' enter your email')
+            button.btn.btn-primary.mx-auto(type='submit') Subscribe
+  // Contact
+  section.contact-section.bg-black
+    .container
+      .row
+        .col-md-4.mb-3.mb-md-0
+          .card.py-4.h-100
+            .card-body.text-center
+              i.fas.fa-map-marked-alt.text-primary.mb-2
+              h4.text-uppercase.m-0 address
+              hr.my-4
+              .small.text-black-50 Carrear 69
+        .col-md-4.mb-3.mb-md-0
+          .card.py-4.h-100
+            .card-body.text-center
+              i.fas.fa-envelope.text-primary.mb-2
+              h4.text-uppercase.m-0 Email
+              hr.my-4
+              .small.text-black-50
+                a(href='#!') hm@yourdomain.com
+        .col-md-4.mb-3.mb-md-0
+          .card.py-4.h-100
+            .card-body.text-center
+              i.fas.fa-mobile-alt.text-primary.mb-2
+              h4.text-uppercase.m-0 phone
+              hr.my-4
+              .small.text-black-50 +57 (302526622)
+      .social.d-flex.justify-content-center
+        a.mx-2(href='#!')
+          i.fab.fa-twitter
+        a.mx-2(href='#!')
+          i.fab.fa-facebook-f
+        a.mx-2(href='#!')
+          i.fab.fa-github
+  // Footer
+  footer.footer.bg-black.small.text-center.text-white-50
+    .container Copyright &copy; vgu
+  // Bootstrap core JS
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js')
+  script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js')
+  // Third party plugin JS
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js')
+  // Core theme JS
+  script(src='javascripts/scripts.js')
+  script(src='https://unpkg.com/leaflet@1.6.0/dist/leaflet.js' integrity='sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==' crossorigin='')
+  script(src='javascripts/map.js')
